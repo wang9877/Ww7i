@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机情话</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        #quoteDisplay {
+            font-size: 24px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            min-height: 100px; /* 保证有足够高度，防止页面跳动 */
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="quoteDisplay"></div>
+        <div class="footer">扫描二维码，获取你的专属情话</div>
+    </div>
+
+    <script>
+        // 情话数组
+        const quotes = [
+            "我遇见你，像风吹过麦田，掀起了我所有的心动。",
+            "你是落在我世界里的一束光，从此我的世界再也没有黑暗。",
+            "我想把世界上最好的都给你，却发现世界上最好的就是你。",
+            "遇见你之后，我再也没想过别人，我的心是你的了。",
+            "和你在一起的每一天，都像泡在蜜罐里一样甜。",
+            "你知道我最喜欢什么神吗？你的眼神。",
+            "我能想到最浪漫的事，就是和你一起慢慢变老。",
+            "你不是我权衡利弊后的选择，而是我怦然心动后，明知不可为而为之的坚定。",
+            "我的耳朵和我的心喜欢你，它们拜托我一定一定要讲给你听。",
+            "我喜欢你，从一而终，认真且怂。",
+            "山河远阔，人间烟火，无一是你，无一不是你。",
+            "我本是槐花院落闲散的人，满襟酒气。小池塘边跌坐看鱼，眉挑烟火过一生。直到遇见你。",
+            "你问我有多爱你，大概就是，再遇见你一百次，也会沦陷一百次。",
+            "我想在你眼里，撒野奔跑；我想一个眼神，就到老。",
+            "你是我淋过最大的一场雨，湿漉漉的，却让我觉得无比温暖。",
+            "我把喜欢写在风里，从此整个世界都是你。",
+            "你的名字，是我听过最短的情诗。",
+            "世界很复杂，还好有你，让一切都变得简单。",
+            "我喜欢你，不是情话，是心里话。",
+            "我希望我们的故事，是未完待续……"
+            // 在这里可以继续添加更多情话
+        ];
+
+        // 随机选择一句情话并显示
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteElement = document.getElementById('quoteDisplay');
+            
+            // 添加一个简单的淡入效果
+            quoteElement.style.opacity = '0';
+            setTimeout(() => {
+                quoteElement.textContent = quotes[randomIndex];
+                quoteElement.style.opacity = '1';
+            }, 300);
+        }
+
+        // 页面加载完成后立即显示一句
+        window.onload = displayRandomQuote;
+    </script>
+
+</body>
+</html>
